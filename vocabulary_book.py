@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# %% 
 # In[1]:
-
 
 #モジュールを取り込む
 import openpyxl
@@ -18,25 +18,9 @@ listA = [ y.value for y in ws['B'] ]  #A列(回答)
 #print(list1)
 #print(list2)
 
-cnt = 0  #問題数を数える
-score = 0  #正解数を数える
 
-for x in listQ:
-    cnt += 1
-    print(f"第{cnt}問:",x)
-    ans = input("答えを入力してください")
-    if ans == listA[cnt - 1]:
-        print ('\033[31m' +"正解"+ '\033[0m')    #文字を赤色にする
-        score += 1
-    else:
-        print("不正解" )
-        print("正解は",'\033[31m' + listA[cnt-1] + '\033[0m')
-    print()
-
-#print("正答率:",score,"/",cnt)
-# In[4]:
-
-
+# %% 
+# In[2]:
 import random
 
 #重複なしのランダムな数列
@@ -52,12 +36,12 @@ L = len(listQ)   #リストの個数を求める
 listRnd = rand_ints_nodup(1, L, 10)   #1~Lからランダムで10個
 print(listRnd)
 
-
-# In[5]:
-
-
+# %% 
+# In[3]:
 cnt = 0
 score = 0
+
+#問題を出題
 for x in listRnd:
     cnt += 1
     print(f"第{cnt}問:",listQ[x-1])
@@ -71,10 +55,3 @@ for x in listRnd:
     print()
 
 print("正答率:",score,"/",cnt)
-
-
-# In[ ]:
-
-
-
-
